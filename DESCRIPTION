@@ -1,0 +1,13 @@
+Package: denislafage
+Version: 0.0.0.9000
+Title: Denislfage
+Description: A package to say Hello to the world.
+Authors@R: person(given = "Denis",
+       family = "Lafage",
+       role = c("aut", "cre"),
+       email = "d.lafage@cenpaysdelaloire.fr",
+       comment = c(ORCID = "https://orcid.org/0000-0002-6205-611X"))
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2

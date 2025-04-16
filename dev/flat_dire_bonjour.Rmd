@@ -1,0 +1,54 @@
+---
+title: "flat_dire_bonjour.Rmd empty"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r development, include=FALSE}
+library(testthat)
+```
+
+<!--
+ You need to run the 'description' chunk in the '0-dev_history.Rmd' file before continuing your code there.
+-->
+
+```{r development-load}
+# Load already included functions if relevant
+pkgload::load_all(export_all = FALSE)
+```
+
+# dire_bonjour
+
+```{r development-dire_bonjour}
+# Prepare the code of your function here
+```
+
+```{r function-dire_bonjour}
+#' dire_bonjour Title
+#'
+#' @return 1
+#' @export
+#'
+#' @examples
+dire_bonjour <- function() {
+  1
+}
+```
+
+```{r examples-dire_bonjour}
+dire_bonjour()
+```
+
+```{r tests-dire_bonjour}
+test_that("dire_bonjour works", {
+  expect_true(inherits(dire_bonjour, "function"))
+})
+```
+
+
+```{r development-inflate, eval=FALSE}
+# Run but keep eval=FALSE to avoid infinite loop
+# Execute in the console directly
+fusen::inflate(flat_file = "dev/flat_dire_bonjour.Rmd", vignette_name = "Minimal")
+```
