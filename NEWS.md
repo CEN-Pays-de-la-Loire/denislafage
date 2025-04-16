@@ -1,3 +1,5 @@
-# denislafage (development version)
+# denislafage 0.0.0.9001
 
-* Initial CRAN submission.
+## Addition
+
+* Add dire_bonjour function

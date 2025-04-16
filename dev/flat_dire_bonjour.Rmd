@@ -22,27 +22,53 @@ pkgload::load_all(export_all = FALSE)
 
 ```{r development-dire_bonjour}
 # Prepare the code of your function here
+library(glue)
+prenom <- "Vincent"
+glue("Bonjour {prenom} !")
+
 ```
 
 ```{r function-dire_bonjour}
-#' dire_bonjour Title
+#' dire_bonjour
 #'
-#' @return 1
+#' @return A string saying hello
 #' @export
-#'
+#' @import glue glue
 #' @examples
-dire_bonjour <- function() {
-  1
+dire_bonjour <- function(prenom = "toi") {
+  if (isFALSE(nzchar(prenom))) {
+    stop("Your string is empty")
+  }
+  if (!is.character(prenom)){
+    stop("Please provide a string as prenom")
+  }
+  return(
+    glue("Bonjour, ", prenom, " !")
+  )
 }
 ```
 
 ```{r examples-dire_bonjour}
-dire_bonjour()
+dire_bonjour("Denis")
+dire_bonjour("")
 ```
 
 ```{r tests-dire_bonjour}
 test_that("dire_bonjour works", {
   expect_true(inherits(dire_bonjour, "function"))
+})
+
+test_that("dire_bonjour return a string", {
+  expect_type(
+    object = dire_bonjour("Denis"),
+    "character"
+  )
+})
+
+test_that("dire_bonjour returns error", {
+  expect_error(
+    object = dire_bonjour(2)
+  )
 })
 ```
 
@@ -50,5 +76,5 @@ test_that("dire_bonjour works", {
 ```{r development-inflate, eval=FALSE}
 # Run but keep eval=FALSE to avoid infinite loop
 # Execute in the console directly
-fusen::inflate(flat_file = "dev/flat_dire_bonjour.Rmd", vignette_name = "Minimal")
+fusen::inflate(flat_file = "dev/flat_dire_bonjour.Rmd", vignette_name = "Dire bonjour")
 ```
