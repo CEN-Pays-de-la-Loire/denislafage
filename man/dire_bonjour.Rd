@@ -6,6 +6,9 @@
 \usage{
 dire_bonjour(prenom = "toi")
 }
+\arguments{
+\item{prenom}{Character. The user first name}
+}
 \value{
 A string saying hello
 }
@@ -14,5 +17,5 @@ dire_bonjour
 }
 \examples{
 dire_bonjour("Denis")
-dire_bonjour("")
+dire_bonjour()
 }

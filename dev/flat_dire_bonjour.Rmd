@@ -30,7 +30,8 @@ glue("Bonjour {prenom} !")
 
 ```{r function-dire_bonjour}
 #' dire_bonjour
-#'
+#' 
+#' @param prenom Character. The user first name
 #' @return A string saying hello
 #' @export
 #' @import glue glue
@@ -50,7 +51,7 @@ dire_bonjour <- function(prenom = "toi") {
 
 ```{r examples-dire_bonjour}
 dire_bonjour("Denis")
-dire_bonjour("")
+dire_bonjour()
 ```
 
 ```{r tests-dire_bonjour}
